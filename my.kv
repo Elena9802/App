@@ -1,0 +1,87 @@
+<Screen1>:
+    BoxLayout:
+        padding: '8sp'
+        orientation: 'vertical'
+        MDLabel:
+            text: 'Отдохните и измерьте пульс 15 сек.'
+        MDTextField:
+            id: p1_field
+            hint_text: "Введите пульс"
+        MDRaisedButton:
+            text: 'Далее'
+            font_size: '40sp'
+            size_hint: 0.5, None
+            pos_hint: {'center_x': 0.5}
+            on_press:
+                root.move_next()
+                app.sm.transition.direction = "left"
+                app.sm.current = "Screen2"
+
+<Screen2>:
+    BoxLayout:
+        MDLabel:
+            text: 'Сделайте 30 приседаний за 45 сек.'
+        MDRaisedButton:
+            text: 'Далее'
+            font_size: '40sp'
+            size_hint: 0.5, None
+            on_press:
+                app.sm.transition.direction = "left"
+                app.sm.current = "Screen3"
+
+<Screen3>:
+    BoxLayout:
+        MDLabel:
+            text: 'Измерьте пульс 15 сек.'
+        MDTextField:
+            id: p2_field
+            hint_text: "Введите пульс"
+        MDRaisedButton:
+            text: 'Далее'
+            font_size: '40sp'
+            size_hint: 0.5, None
+            on_press:
+                root.move_next()
+                app.sm.transition.direction = "left"
+                app.sm.current = "Screen4"
+
+<Screen4>:
+    BoxLayout:
+        MDLabel:
+            text: 'Отдохните 30 сек.'
+        MDRaisedButton:
+            text: 'Далее'
+            font_size: '40sp'
+            size_hint: 0.5, None
+            on_press:
+                app.sm.transition.direction = "left"
+                app.sm.current = "Screen5"
+
+<Screen5>:
+    BoxLayout:
+        MDLabel:
+            text: 'Измерьте пульс 15 сек.'
+        MDTextField:
+            id: p3_field
+            hint_text: "Введите пульс"
+        MDRaisedButton:
+            text: 'Далее'
+            font_size: '40sp'
+            size_hint: 0.5, None
+            on_press:
+                root.move_next()
+                app.sm.transition.direction = "left"
+                app.sm.current = "Screen6"
+
+<Screen6>:
+    BoxLayout:
+        MDLabel:
+            id: result_label
+            text: 'Ваш результат'
+        MDRaisedButton:
+            text: 'Сначала'
+            font_size: '40sp'
+            size_hint: 0.5, None
+            on_press:
+                app.sm.transition.direction = "left"
+                app.sm.current = "Screen1"
